@@ -89,5 +89,14 @@ export const artists = [
     portfolioUrl: "https://twitter.com",
     marketplaceUrl: "https://opensea.io",
   },
+  {
+    name: "Ata",
+    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bee: "artist1",
+    community: "1Hive and Agave",
+    communityUrl: "https://1hive.org",
+    portfolioUrl: "https://twitter.com",
+    marketplaceUrl: "https://opensea.io",
+  },
   
 ];
