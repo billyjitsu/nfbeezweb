@@ -42,7 +42,7 @@ export const artists = [
     community: "Bright ID",
     communityUrl: "https://www.brightid.org/",
     portfolioUrl: "https://twitter.com",
-    marketplaceUrl: "https://opensea.io",
+    marketplaceUrl: "https://paintswap.finance/",
   },
   {
     name: "Zer8",
@@ -61,6 +61,33 @@ export const artists = [
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
     marketplaceUrl: "https://opensea.io/AnnAnna96",
+  },
+  {
+    name: "Alessa",
+    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bee: "artist1",
+    community: "1Hive",
+    communityUrl: "https://1hive.org",
+    portfolioUrl: "https://twitter.com",
+    marketplaceUrl: "https://opensea.io",
+  },
+  {
+    name: "Harsh",
+    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bee: "artist1",
+    community: "1Hive",
+    communityUrl: "https://1hive.org",
+    portfolioUrl: "https://twitter.com",
+    marketplaceUrl: "https://opensea.io",
+  },
+  {
+    name: "Jean Andre",
+    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bee: "artist1",
+    community: "xDai Punks",
+    communityUrl: "https://1hive.org",
+    portfolioUrl: "https://twitter.com",
+    marketplaceUrl: "https://opensea.io",
   },
   
 ];
