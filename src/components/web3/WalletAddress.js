@@ -18,7 +18,10 @@ const WalletAddress = () => {
   const addAddress = useStore((state) => state.addWalletAddress);
 
   //on page load, check if user has metamask, and check if there is wallet address saved
-  useEffect(() => {}, []);
+  useEffect(() => {
+    connectWalletHandler();
+    //getCurrentWalletConnected();
+  }, []);
 
   //connects user to metamask to add address
   const connectWalletHandler = async () => {
@@ -32,6 +35,26 @@ const WalletAddress = () => {
       setError(true);
     }
   };
+
+ /* //billy
+  const getCurrentWalletConnected = async () => {
+    if (window.ethereum) {
+     const addressArray = window.ethereum.request({ method: "eth_accounts"});
+     if(addressArray.lenght > 0) {
+      console.log(addressArray[0], "from current wallet connected")
+       return {
+         address: addressArray[0]
+       }
+     }else{
+       return{
+         address: ""
+       }
+     }
+    }else{
+      setError(true);
+    }
+  };
+*/
 
   const accountChangeHandler = (newAccount) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -78,7 +101,7 @@ const WalletAddress = () => {
       )}
       {wrongNetwork && <Button onClick={connectToXDai}>Connect to xDai</Button>}
       {!wrongNetwork && shortenedAddress && (
-        <Address>{shortenedAddress}</Address>
+        <Button><Address>{shortenedAddress}</Address></Button>
       )}
     </>
   );
