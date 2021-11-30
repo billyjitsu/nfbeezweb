@@ -130,8 +130,8 @@ const Minter = ({ mintTotal }) => {
         );
 
         console.log("Going to pop wallet now to pay gas...");
-        let payment = String(numToMint * 0.1);
-        let totalGas = String(numToMint * 3000000);
+        let payment = String(numToMint * 0.01);
+        let totalGas = String(numToMint * 2850000);
         let nftTxn = await connectedContract.mint(numToMint, {
           gasLimit: totalGas,
           value: ethers.utils.parseEther(payment),
@@ -142,7 +142,8 @@ const Minter = ({ mintTotal }) => {
         setLoading(false);
         setTxn(nftTxn.hash);
         console.log(
-          `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
+           //  `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
+             `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}`
         );
       } else {
         console.log("Ethereum object doesn't exist!");
@@ -155,16 +156,30 @@ const Minter = ({ mintTotal }) => {
   return (
     <>
       {nftMinted && (
+      <>
         <Notification>
           <p>Your NFTs have been minted!</p>
           <a
-            href={`https://rinkeby.etherscan.io/tx/${txn}`}
+            href={`https://blockscout.com/xdai/mainnet/tx/${txn}`}
             rel={"noreferrer"}
             target="_blank"
           >
             <Button>View transaction</Button>
           </a>
         </Notification>
+        <p></p>
+        <Mint>
+          <MintNumInput
+            placeholder="# of NFTs"
+            min="1"
+            max="10"
+            name="mintTotal"
+            onChange={handleChange}
+            value={numToMint}
+          ></MintNumInput>
+          <MintButton onClick={mintTokens}>Mint NFTs</MintButton>
+        </Mint>
+      </>
       )}
       {loading && (
         <Notification>

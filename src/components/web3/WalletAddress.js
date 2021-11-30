@@ -59,7 +59,7 @@ const WalletAddress = () => {
   const accountChangeHandler = (newAccount) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     setAccount(newAccount);
-    console.log(newAccount, "accounch");
+    console.log(newAccount, "account");
     addAddress(newAccount);
     shortenAddress(newAccount);
     const network = provider.getNetwork();
