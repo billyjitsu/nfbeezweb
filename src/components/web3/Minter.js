@@ -143,7 +143,8 @@ const Minter = ({ mintTotal }) => {
         setTxn(nftTxn.hash);
         console.log(
            //  `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
-             `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}`
+             `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
+           //  `Mined, see transaction: https://blockscout.com/poa/sokol/tx/${nftTxn.hash}` //sokol
         );
       } else {
         console.log("Ethereum object doesn't exist!");
