@@ -90,10 +90,10 @@ const App = () => {
           {mintTotal < 1 && (
             <HelperText>Please mint at least 1 nft.</HelperText>
           )}
-          {mintTotal > 25 && (
+          {mintTotal > 15 && (
             <HelperText error>
-              Gas fees will be very high for more than 25 nfts. <br />
-              Please mint 25 nfts at a time at most.
+              Gas fees will be very high for more than 15 nfts. <br />
+              Please mint 15 nfts at a time at most.
             </HelperText>
           )}
         </Hero>

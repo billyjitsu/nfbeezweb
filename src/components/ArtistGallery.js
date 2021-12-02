@@ -116,7 +116,7 @@ const ArtistGallery = () => {
                 </a>
               </ArtistLinks>
             </ArtistInfo>
-            <img src={Bee} alt={`${data.name}'s best bee`} />
+            <img src={data.bee} alt={`${data.name}'s best bee`} />
           </Card>
         ))}
     </Gallery>
