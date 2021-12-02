@@ -45,8 +45,8 @@ const Hero = styled.section`
 
 const App = () => {
   let mintTotal = useStore((state) => state?.nftsToMint);
-  const [totalMinted, setTotalMinted] = useState(1);
-
+ // const [totalMinted, setTotalMinted] = useState(1);
+/*
   useEffect(() => {
     const mintsSoFar = async () => {
       try {
@@ -73,7 +73,7 @@ const App = () => {
     };
     mintsSoFar();
   }, []);
-
+*/
   return (
     <Layout>
       <Nav focusMinter />
@@ -85,9 +85,6 @@ const App = () => {
             A Collection of unique animated bees by the 1hive community.
             <br />
             <strong>Mint yours now.</strong>
-          </p>
-          <p>
-            <strong>{totalMinted}/3,333</strong> minted so far
           </p>
           <Minter id="minter" mintTotal={mintTotal} />
           {mintTotal < 1 && (

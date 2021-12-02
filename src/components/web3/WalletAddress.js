@@ -5,10 +5,12 @@ import useStore from "../../store";
 import { Button } from "../Button";
 import { networkChainId } from "../../data/network";
 
+
 const Address = styled.p`
   font-size: 1.2rem;
   margin-right: 1rem;
 `;
+
 
 const WalletAddress = () => {
   const [error, setError] = useState();
@@ -101,7 +103,7 @@ const WalletAddress = () => {
       )}
       {wrongNetwork && <Button onClick={connectToXDai}>Connect to xDai</Button>}
       {!wrongNetwork && shortenedAddress && (
-        <Button><Address>{shortenedAddress}</Address></Button>
+        <Button>{shortenedAddress}</Button>
       )}
     </>
   );

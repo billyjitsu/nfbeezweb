@@ -82,6 +82,9 @@ const Minter = ({ mintTotal }) => {
   const [loading, setLoading] = useState(false);
   const [nftMinted, setNFTMinted] = useState(false);
   const [txn, setTxn] = useState();
+  const [totalMinted, setTotalMinted] = useState(1);
+
+  const [currentAccount, setCurrentAccount] = useState("");
 
   const handleChange = (e) => {
     setNumToMint(e.target.value);
@@ -116,6 +119,7 @@ const Minter = ({ mintTotal }) => {
     setupEventListener();
   }, []);
 
+
   const mintTokens = async () => {
     try {
       const { ethereum } = window;
@@ -128,19 +132,32 @@ const Minter = ({ mintTotal }) => {
           NFT.abi,
           signer
         );
-
+        
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+        
+        if (accounts.length !== 0) {
+          const account = accounts[0];
+          console.log("Found an authorized account:", account);
+          setCurrentAccount(account);
+        }else {
+          console.log("No authorized account found");
+        }
         console.log("Going to pop wallet now to pay gas...");
-        let payment = String(numToMint * 0.01);
-        let totalGas = String(numToMint * 2850000);
+        let payment = String(numToMint * 0.01); //VERIFY!
+        //let totalGas = String(numToMint * 2000000);
+        
         let nftTxn = await connectedContract.mint(numToMint, {
-          gasLimit: totalGas,
+         // gasLimit: totalGas,
           value: ethers.utils.parseEther(payment),
         });
         setLoading(true);
+        setNFTMinted(false);
         console.log("Mining...please wait.");
         await nftTxn.wait();
         setLoading(false);
         setTxn(nftTxn.hash);
+        let newCount = await connectedContract.totalSupply();
+        setTotalMinted(newCount.toNumber());
         console.log(
            //  `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
              `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
@@ -154,8 +171,38 @@ const Minter = ({ mintTotal }) => {
     }
   };
 
+  useEffect(() => {
+    const mintsSoFar = async () => {
+      try {
+        const { ethereum } = window;
+
+        if (ethereum) {
+          const provider = new ethers.providers.Web3Provider(ethereum);
+          const signer = provider.getSigner();
+          const connectedContract = new ethers.Contract(
+            contractAddress,
+            NFT.abi,
+            signer
+          );
+
+          let totalMints = await connectedContract.totalSupply();
+          setTotalMinted(totalMints.toNumber());
+          console.log("Mints so far:", totalMints.toNumber());
+        } else {
+          console.log("Ethereum object doesn't exist!");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    mintsSoFar();
+  }, []);
+
   return (
     <>
+      <p>
+        <strong>{totalMinted}/3,333</strong> minted so far
+      </p>
       {nftMinted && (
       <>
         <Notification>
@@ -166,6 +213,14 @@ const Minter = ({ mintTotal }) => {
             target="_blank"
           >
             <Button>View transaction</Button>
+            <p> </p>
+          </a>
+          <a
+            href={`https://epor.io/${currentAccount}`}
+            rel={"noreferrer"}
+            target="_blank"
+          >
+            <Button>Visit Epor to view</Button>
           </a>
         </Notification>
         <p></p>
