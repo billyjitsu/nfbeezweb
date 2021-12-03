@@ -144,10 +144,14 @@ const Minter = ({ mintTotal }) => {
         }
         console.log("Going to pop wallet now to pay gas...");
         let payment = String(numToMint * 0.01); //VERIFY!
-        //let totalGas = String(numToMint * 2000000);
-        
+        let totalGas
+        if(numToMint < 2) {
+          totalGas = String(numToMint * 2000000);
+        }else{
+          totalGas = String(4085000);
+        }
         let nftTxn = await connectedContract.mint(numToMint, {
-         // gasLimit: totalGas,
+          gasLimit: totalGas,
           value: ethers.utils.parseEther(payment),
         });
         setLoading(true);

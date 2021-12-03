@@ -10,6 +10,7 @@ import useStore from "./store";
 import NFT from "./utils/NFT.json";
 import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
+import Larva from "./assets/bees/larva.gif";
 
 const Main = styled.main`
   padding: clamp(0.5rem, 2rem, 4rem);
@@ -81,7 +82,8 @@ const App = () => {
         <Hero>
           <h1>NFBeez</h1>
           <p>
-            {" "}
+            <img src={Larva} alt="Larva" width="200" />
+            <br />
             A Collection of unique animated bees by the 1hive community.
             <br />
             <strong>Mint yours now.</strong>
