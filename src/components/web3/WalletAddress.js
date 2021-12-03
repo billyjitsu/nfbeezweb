@@ -22,6 +22,7 @@ const WalletAddress = () => {
   //on page load, check if user has metamask, and check if there is wallet address saved
   useEffect(() => {
     connectWalletHandler();
+    connectToXDai();
     //getCurrentWalletConnected();
   }, []);
 
