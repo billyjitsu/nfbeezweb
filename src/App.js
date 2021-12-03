@@ -84,7 +84,11 @@ const App = () => {
           <p>
             <img src={Larva} alt="Larva" width="200" />
             <br />
-            A Collection of unique animated bees by the 1hive community.
+            A Collection of unique, hand drawn animated bees from the community artists at 1Hive, Agave,
+            BrightID, TEC, Shapeshift and Gitcoin
+            <br />
+            <br />
+            NFBeez are more than just a PFP project, they are a representation of the strong ecosystem built on the xDai Network
             <br />
             <strong>Mint yours now.</strong>
           </p>
@@ -92,10 +96,10 @@ const App = () => {
           {mintTotal < 1 && (
             <HelperText>Please mint at least 1 nft.</HelperText>
           )}
-          {mintTotal > 15 && (
+          {mintTotal > 25 && (
             <HelperText error>
-              Gas fees will be very high for more than 15 nfts. <br />
-              Please mint 15 nfts at a time at most.
+              Gas fees will be very high for more than 25 nfts. <br />
+              Please mint 25 nfts at a time at most, as contract will deny higher.
             </HelperText>
           )}
         </Hero>
