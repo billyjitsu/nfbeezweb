@@ -21,8 +21,8 @@ const WalletAddress = () => {
 
   //on page load, check if user has metamask, and check if there is wallet address saved
   useEffect(() => {
-    connectWalletHandler();
-    connectToXDai();
+     connectWalletHandler();
+    //connectToXDai();
     addWalletListener();
     //getCurrentWalletConnected();
   }, []);
@@ -40,7 +40,8 @@ const WalletAddress = () => {
     }
   };
 
-  //
+  //billy
+  /*
   const addWalletListener = async () => {
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
@@ -52,8 +53,18 @@ const WalletAddress = () => {
       setError(true)
     }
   }
+  */
 
+  const addWalletListener = async () => {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", connectWalletHandler )
+      window.ethereum.on("chainChanged", reloadPage )
+    }
+  }
 
+  const reloadPage = () => {
+    window.location.reload();
+  }
  /* //billy
   const getCurrentWalletConnected = async () => {
     if (window.ethereum) {

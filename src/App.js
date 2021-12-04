@@ -11,6 +11,7 @@ import NFT from "./utils/NFT.json";
 import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
 import Larva from "./assets/bees/larva.gif";
+import Flow from "./assets/bees/test.png";
 
 const Main = styled.main`
   padding: clamp(0.5rem, 2rem, 4rem);
@@ -82,7 +83,7 @@ const App = () => {
         <Hero>
           <h1>NFBeez</h1>
           <p>
-            <img src={Larva} alt="Larva" width="200" />
+            <img src={Flow} alt="Larva" width="200" />
             <br />
             A Collection of unique animated bees from the community artists at 1Hive, Agave,
             BrightID, TEC, Shapeshift and Gitcoin
