@@ -57,8 +57,8 @@ const WalletAddress = () => {
 
   const addWalletListener = async () => {
     if (window.ethereum) {
-      window.ethereum.on("accountsChanged", connectWalletHandler )
-      window.ethereum.on("chainChanged", reloadPage )
+      window.ethereum.on("accountsChanged", connectWalletHandler );
+      window.ethereum.on("chainChanged", reloadPage );
     }
   }
 

@@ -105,9 +105,13 @@ const Minter = ({ mintTotal }) => {
             signer
           );
 
+          //Testing Wallet event for exclusive events
+          const accounts = await ethereum.request({ method: "eth_accounts" });
           // This will essentially "capture" our event when our contract throws it.
           connectedContract.on("MintedNFT", (from) => {
-            setNFTMinted(true);
+            if(from === accounts[0]){
+              setNFTMinted(true);
+            }
           });
         } else {
           console.log("Ethereum object doesn't exist!");
