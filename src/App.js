@@ -81,7 +81,7 @@ const App = () => {
       <Nav focusMinter />
       <Main>
         <Hero>
-        <h1>NFBee2z test</h1>
+        <h1>NFBeez</h1>
           <p>
             <img src={Flow} alt="Larva" width="200" />
             <br />
