@@ -16,20 +16,7 @@ const Notification = styled.div`
   border-radius: 16px;
   padding: 1rem;
   p {
-    margin: 0 0 1rem 0;
-  }
-`;
-
-const Connect = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: ${(p) => p.theme.colors.creamLightest + 40};
-  border-radius: 16px;
-  padding: 1rem;
-  p {
-    margin: 0 0 1rem 0;
+    margin: 0 0 .5rem 0;
   }
 `;
 
@@ -236,38 +223,11 @@ const Minter = ({ mintTotal }) => {
     mintsSoFar();
   }, []);
 
-/*
-  //Render tests
-  const renderNotConnected = () => {
-    <>
-    <Connect>
-      <Button>Please Connect Wallet</Button>
-    </Connect>
-  </>
-  }
-
-  //Render Mint UI if connected
-  const renderMintUI = () => {
-      <Mint>
-        <MintNumInput
-          placeholder="# of NFTs"
-          min="1"
-          max="10"
-          name="mintTotal"
-          onChange={handleChange}
-          value={numToMint}
-        ></MintNumInput>
-        <MintButton onClick={mintTokens}>Mint NFTs</MintButton>
-      </Mint>
-  }
-*/
-
   return (
     <>
       <p>
         <strong>{totalMinted}/3,333</strong> minted so far
       </p>
-
       {nftMinted && (
       <>
         <Notification>
@@ -303,12 +263,15 @@ const Minter = ({ mintTotal }) => {
       </>
       )}
       {loading && (
+        <>
         <Notification>
           <p>
             Your tokens are minting. Please wait a few minutes. This message
             will be replaced with your transaction once minted.
           </p>
         </Notification>
+        <br />
+        </>
       )}
       {!nftMinted && (
         <Mint>
