@@ -24,9 +24,11 @@ const WalletAddress = () => {
     connectWalletHandler();
     //connectToXDai();
     addWalletListener();
-    setAccount();
+   // accountChangeHandler();
+    setAccount()
   }, []);
 
+  
   //connects user to metamask to add address
   const connectWalletHandler = async () => {
     if (window.ethereum) {
@@ -57,12 +59,17 @@ const WalletAddress = () => {
     setAccount(newAccount);
     console.log(newAccount, "account");
     addAddress(newAccount);
-    shortenAddress(newAccount);
+    //shortenAddress(newAccount);
     const network = await provider.getNetwork();
     const chainId = network.chainId;
     // Hardcoded for xdai - Hex value issues
     if (chainId !== 100) {
       setWrongNetwork(true);
+    }
+    if(newAccount !== undefined) {
+    shortenAddress(newAccount);
+    }else{
+      return;
     }
   };
   
