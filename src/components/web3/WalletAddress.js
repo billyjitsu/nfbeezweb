@@ -21,8 +21,8 @@ const WalletAddress = () => {
 
   //on page load, check if user has metamask, and check if there is wallet address saved
   useEffect(() => {
-     connectWalletHandler();
-    //connectToXDai();
+    connectWalletHandler();
+    connectToXDai();
     addWalletListener();
     //getCurrentWalletConnected();
   }, []);
@@ -103,6 +103,7 @@ const WalletAddress = () => {
     await window.ethereum.request({
       method: "wallet_switchEthereumChain",
       params: [{ chainId: `0x${networkChainId}` }],
+      
     });
     setWrongNetwork(false);
   };

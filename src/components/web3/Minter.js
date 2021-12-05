@@ -5,8 +5,22 @@ import { Button } from "../Button";
 import NFT from "../../utils/NFT.json";
 import useStore from "../../store";
 import { contractAddress } from "../../data/contract";
+import { networkChainId } from "../../data/network";
 
 const Notification = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: ${(p) => p.theme.colors.creamLightest + 40};
+  border-radius: 16px;
+  padding: 1rem;
+  p {
+    margin: 0 0 1rem 0;
+  }
+`;
+
+const Connect = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,15 +119,17 @@ const Minter = ({ mintTotal }) => {
             NFT.abi,
             signer
           );
+          
+          //update minted totals
+          
 
           //Testing Wallet event for exclusive events
-          const accounts = await ethereum.request({ method: "eth_accounts" });
-          console.log("account from event", accounts[0]);
+          // const accounts = await ethereum.request({ method: "eth_accounts" });
+          //console.log("account from event", accounts[0]);
           // This will essentially "capture" our event when our contract throws it.
           connectedContract.on("MintedNFT", (from) => {
             console.log("from", from);
               setNFTMinted(true);
-            
           });
         } else {
           console.log("Ethereum object doesn't exist!");
@@ -143,16 +159,27 @@ const Minter = ({ mintTotal }) => {
         
         if (accounts.length !== 0) {
           const account = accounts[0];
-          console.log("Found an authorized account:", account);
+        //  console.log("Found an authorized account:", account);
           setCurrentAccount(account);
         }else {
           console.log("No authorized account found");
         }
+
+        const network = await provider.getNetwork();
+        
+        const chainId = network.chainId; 
+        //hardcoded for xDai
+        //if not on chain break / return the function
+        if (chainId !== 100) {
+          alert('Please make sure you are on xDai Network');
+          return;
+        };
+
         console.log("Going to pop wallet now to pay gas...");
         let payment = String(numToMint * 0.01); //VERIFY!
         let totalGas
         if(numToMint < 2) {
-          totalGas = String(numToMint * 2000000);
+          totalGas = String(numToMint * 2400000);
         }else{
           totalGas = String(4085000);
         }
@@ -209,11 +236,38 @@ const Minter = ({ mintTotal }) => {
     mintsSoFar();
   }, []);
 
+/*
+  //Render tests
+  const renderNotConnected = () => {
+    <>
+    <Connect>
+      <Button>Please Connect Wallet</Button>
+    </Connect>
+  </>
+  }
+
+  //Render Mint UI if connected
+  const renderMintUI = () => {
+      <Mint>
+        <MintNumInput
+          placeholder="# of NFTs"
+          min="1"
+          max="10"
+          name="mintTotal"
+          onChange={handleChange}
+          value={numToMint}
+        ></MintNumInput>
+        <MintButton onClick={mintTokens}>Mint NFTs</MintButton>
+      </Mint>
+  }
+*/
+
   return (
     <>
       <p>
         <strong>{totalMinted}/3,333</strong> minted so far
       </p>
+
       {nftMinted && (
       <>
         <Notification>
