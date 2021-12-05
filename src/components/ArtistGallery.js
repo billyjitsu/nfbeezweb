@@ -12,7 +12,7 @@ const Gallery = styled.section`
   margin-bottom: 32 px;
   @media (min-width: ${(props) => props.theme.breakpoints.l}) {
     grid-template-columns: fit-content(50%) fit-content(50%);
-    grid-gap: 50px;
+    grid-gap: 17px;
     place-items: center center;
   }
 `;
@@ -40,8 +40,7 @@ const Card = styled.article`
     box-shadow: ${(p) => p.theme.boxShadow.medium};
   }
   img {
-    padding: 25px;
-    width: 18rem;
+    width 24rem;
   }
   a {
     color: ${(p) => p.theme.colors.greyMedium};
@@ -51,17 +50,20 @@ const Card = styled.article`
     padding: 2rem;
     margin: 0 0 1rem 0;
     flex-direction: column-reverse;
-    max-width: 85%;
+    max-width: 100%;
     img {
       width: 10rem;
     }
   }
   @media (min-width: ${(props) => props.theme.breakpoints.l}) {
-    flex-direction: column;
+    flex-direction: row;
     width: 85%;
     margin: 0 0.5rem 2rem 0.5rem;
     padding: 2rem 2rem 2rem 2rem; 
     border-radius: 45px;
+    img {
+      width: 24rem;
+    }
   }
 `;
 
