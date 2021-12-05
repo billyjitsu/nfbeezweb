@@ -8,8 +8,22 @@ const Gallery = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
-  grid-gap: 32 px;
+  grid-gap: 30px;
   margin-bottom: 32 px;
+  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
+    grid-template-columns: fit-content(50%) fit-content(50%);
+    grid-gap: 50px;
+    place-items: center center;
+  }
+`;
+
+const Title = styled.h2`
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
 `;
 
 const Card = styled.article`
@@ -26,20 +40,28 @@ const Card = styled.article`
     box-shadow: ${(p) => p.theme.boxShadow.medium};
   }
   img {
-    width: 24rem;
+    padding: 25px;
+    width: 18rem;
   }
   a {
     color: ${(p) => p.theme.colors.greyMedium};
   }
   @media (max-width: ${(props) => props.theme.breakpoints.m}) {
     align-items: center;
-    padding: 0.5rem;
+    padding: 2rem;
     margin: 0 0 1rem 0;
     flex-direction: column-reverse;
-    max-width: 100%;
+    max-width: 85%;
     img {
       width: 10rem;
     }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
+    flex-direction: column;
+    width: 85%;
+    margin: 0 0.5rem 2rem 0.5rem;
+    padding: 2rem 2rem 2rem 2rem; 
+    border-radius: 45px;
   }
 `;
 
@@ -91,9 +113,9 @@ const ArtistLinks = styled.div`
 `;
 
 const ArtistGallery = () => {
-  return (
+  return (<>
+  <Title>The Artists Behind The Project</Title>
     <Gallery>
-      <h2>The Artists Behind The Project</h2>
       {artists.length !== 0 &&
         artists.map((data) => (
           <Card key={data.name + data.community}>
@@ -120,6 +142,7 @@ const ArtistGallery = () => {
           </Card>
         ))}
     </Gallery>
+    </>
   );
 };
 
