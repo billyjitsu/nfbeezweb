@@ -72,7 +72,7 @@ const ArtistInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
   h3 {
-    margin: 0;
+    margin: 1px;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     align-items: center;
