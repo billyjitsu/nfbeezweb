@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     siteName: "Twitter",
-    url: "https://twitter.com/1HiveOrg",
+    url: "https://twitter.com/1HiveNFBeez",
   },
   {
     siteName: "Discord",

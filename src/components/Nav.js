@@ -80,7 +80,9 @@ export default function Nav() {
               </li>
             ))}
         </SocialLinks>
-        <img src={Logo} alt="1hive-full-logo" />
+        <a href="https://twitter.com/1HiveOrg" rel={"noreferrer"} target="_blank">
+          <img src={Logo} alt="1hive-full-logo" />
+        </a>
         <Web3 />
       </NavContainer>
     </header>

@@ -5,10 +5,12 @@ import useStore from "../../store";
 import { Button } from "../Button";
 import { networkChainId } from "../../data/network";
 
+
 const Address = styled.p`
   font-size: 1.2rem;
   margin-right: 1rem;
 `;
+
 
 const WalletAddress = () => {
   const [error, setError] = useState();
@@ -20,7 +22,9 @@ const WalletAddress = () => {
   //on page load, check if user has metamask, and check if there is wallet address saved
   useEffect(() => {
     connectWalletHandler();
-    //getCurrentWalletConnected();
+    //connectToXDai();
+    addWalletListener();
+    setAccount();
   }, []);
 
   //connects user to metamask to add address
@@ -30,57 +34,51 @@ const WalletAddress = () => {
         .request({ method: "eth_requestAccounts" })
         .then((result) => {
           accountChangeHandler(result[0]);
-        });
+        }
+        );
     } else {
       setError(true);
     }
   };
 
- /* //billy
-  const getCurrentWalletConnected = async () => {
+  const addWalletListener = async () => {
     if (window.ethereum) {
-     const addressArray = window.ethereum.request({ method: "eth_accounts"});
-     if(addressArray.lenght > 0) {
-      console.log(addressArray[0], "from current wallet connected")
-       return {
-         address: addressArray[0]
-       }
-     }else{
-       return{
-         address: ""
-       }
-     }
-    }else{
-      setError(true);
+      window.ethereum.on("accountsChanged", connectWalletHandler );
+      window.ethereum.on("chainChanged", reloadPage );
     }
-  };
-*/
+  }
 
-  const accountChangeHandler = (newAccount) => {
+  const reloadPage = () => {
+    window.location.reload();
+  }
+
+  const accountChangeHandler = async (newAccount) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     setAccount(newAccount);
     console.log(newAccount, "account");
     addAddress(newAccount);
     shortenAddress(newAccount);
-    const network = provider.getNetwork();
+    const network = await provider.getNetwork();
     const chainId = network.chainId;
-    if (chainId !== networkChainId) {
+    // Hardcoded for xdai - Hex value issues
+    if (chainId !== 100) {
       setWrongNetwork(true);
     }
   };
-
+  
   //connects to the right network
   const connectToXDai = async () => {
     await window.ethereum.request({
       method: "wallet_switchEthereumChain",
       params: [{ chainId: `0x${networkChainId}` }],
+      
     });
     setWrongNetwork(false);
   };
 
-  const shortenAddress = (newAccount) => {
-    let startChunk = newAccount.substring(0, 5);
-    let endChunk = newAccount.substring(newAccount.length - 5);
+  const shortenAddress = async (newAccount) => {
+    let startChunk = await newAccount.substring(0, 5);
+    let endChunk = await newAccount.substring(newAccount.length - 5);
     setShortenedAddress(`${startChunk}...${endChunk}`);
   };
 
@@ -101,7 +99,7 @@ const WalletAddress = () => {
       )}
       {wrongNetwork && <Button onClick={connectToXDai}>Connect to xDai</Button>}
       {!wrongNetwork && shortenedAddress && (
-        <Button><Address>{shortenedAddress}</Address></Button>
+        <Button>{shortenedAddress}</Button>
       )}
     </>
   );

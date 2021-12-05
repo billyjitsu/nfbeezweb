@@ -69,7 +69,7 @@ export default function Footer() {
       </DisappearOnMobile>
       <LinkContainer>
         <p>Built by members of</p>{" "}
-        <a href="https://1Hive.org" rel={"noreferrer"} target="_blank">
+        <a href="https://about.1hive.org/" rel={"noreferrer"} target="_blank">
           <img src={Logo} alt="1hive-full-logo" />
         </a>
       </LinkContainer>
