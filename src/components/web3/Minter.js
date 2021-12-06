@@ -155,10 +155,10 @@ const Minter = ({ mintTotal }) => {
         const network = await provider.getNetwork();
         
         const chainId = network.chainId; 
-        //hardcoded for xDai
+        //hardcoded for rinkeby
         //if not on chain break / return the function
-        if (chainId !== 100) {
-          alert('Please make sure you are on xDai Network');
+        if (chainId !== 4) {
+          alert('Please make sure you are on Rinkeby Network');
           return;
         };
 
@@ -184,8 +184,8 @@ const Minter = ({ mintTotal }) => {
         setTotalMinted(newCount.toNumber());
         setNFTMinted(true); // testing removing mint
         console.log(
-           //  `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
-             `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
+             `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
+            // `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
            //  `Mined, see transaction: https://blockscout.com/poa/sokol/tx/${nftTxn.hash}` //sokol
         );
       } else {
@@ -233,7 +233,7 @@ const Minter = ({ mintTotal }) => {
         <Notification>
           <p>Your NFTs have been minted!</p>
           <a
-            href={`https://blockscout.com/xdai/mainnet/tx/${txn}`}
+            href={`https://rinkeby.etherscan.io/tx/${txn}`}
             rel={"noreferrer"}
             target="_blank"
           >

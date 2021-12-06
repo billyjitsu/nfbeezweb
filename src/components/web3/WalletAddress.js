@@ -62,8 +62,8 @@ const WalletAddress = () => {
     //shortenAddress(newAccount);
     const network = await provider.getNetwork();
     const chainId = network.chainId;
-    // Hardcoded for xdai - Hex value issues
-    if (chainId !== 100) {
+    // Hardcoded for rinkeby - Hex value issues
+    if (chainId !== 4) {
       setWrongNetwork(true);
     }
     if(newAccount !== undefined) {
@@ -104,7 +104,7 @@ const WalletAddress = () => {
       {!account && (
         <Button onClick={connectWalletHandler}>Connect Wallet</Button>
       )}
-      {wrongNetwork && <Button onClick={connectToXDai}>Connect to xDai</Button>}
+      {wrongNetwork && <Button onClick={connectToXDai}>Connect to Rinkeby</Button>}
       {!wrongNetwork && shortenedAddress && (
         <Button>{shortenedAddress}</Button>
       )}
