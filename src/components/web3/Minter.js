@@ -226,7 +226,7 @@ const Minter = ({ mintTotal }) => {
   return (
     <>
       <p>
-        <strong>{totalMinted}/3,333</strong> minted so far
+        <strong>{totalMinted}/300</strong> minted so far
       </p>
       {nftMinted && (
       <>
@@ -241,11 +241,11 @@ const Minter = ({ mintTotal }) => {
             <p> </p>
           </a>
           <a
-            href={`https://epor.io/${currentAccount}`}
+            href={`https://testnets.opensea.io/collection/xdairedo7`}
             rel={"noreferrer"}
             target="_blank"
           >
-            <Button>Visit Epor to view</Button>
+            <Button>Visit the collection</Button>
           </a>
         </Notification>
         <p></p>
