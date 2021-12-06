@@ -40,6 +40,7 @@ const WalletAddress = () => {
         );
     } else {
       setError(true);
+      setAccount("null");
     }
   };
 
@@ -92,13 +93,13 @@ const WalletAddress = () => {
   return (
     <>
       {error &&
-        !account(
+        account === "null"(
           <a
             href="https://metamask.io/download.html"
             rel={"noreferrer"}
             target="_blank"
           >
-            <Button>Download Metamask</Button>)
+            <Button>Download Metamask</Button>
           </a>
         )}
       {!account && (
