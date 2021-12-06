@@ -64,7 +64,7 @@ export const artists = [
   },
   {
     name: "Alessa",
-    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bio: " She is part of the community of artists that makes the project possible, creator of creative content and willing to continue contributing and collaborating on this and other projects",
     bee: "https://i.imgur.com/UtCiXVu.gif",
     community: "1Hive",
     communityUrl: "https://1hive.org",
