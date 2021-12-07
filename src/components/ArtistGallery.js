@@ -8,8 +8,22 @@ const Gallery = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
-  grid-gap: 32 px;
+  grid-gap: 30px;
   margin-bottom: 32 px;
+  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
+    grid-template-columns: fit-content(50%) fit-content(50%);
+    grid-gap: 50px;
+    place-items: center center;
+  }
+`;
+
+const Title = styled.h2`
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
 `;
 
 const Card = styled.article`
@@ -27,19 +41,28 @@ const Card = styled.article`
   }
   img {
     width: 24rem;
+    border-radius:95px;
   }
   a {
     color: ${(p) => p.theme.colors.greyMedium};
   }
   @media (max-width: ${(props) => props.theme.breakpoints.m}) {
     align-items: center;
-    padding: 0.5rem;
+    padding: 1rem 1rem 1rem 1rem;
     margin: 0 0 1rem 0;
-    flex-direction: column-reverse;
+    border-radius: 33px;
+    flex-direction: row;
     max-width: 100%;
     img {
-      width: 10rem;
+      width: 20rem;
     }
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
+    flex-direction: column;
+    width: 85%;
+    margin: 0 0.5rem 2rem 0.5rem;
+    padding: 2rem 2rem 2rem 2rem; 
+    border-radius: 45px;
   }
 `;
 
@@ -57,13 +80,12 @@ const ArtistInfo = styled.div`
       margin-top: 1rem;
     }
     p {
-      width: 100%;
+      width: 75%%;
     }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.m}) {
     align-items: center;
     justify-content: center;
-    padding: 1rem;
   }
 `;
 
@@ -73,6 +95,7 @@ const ArtistLinks = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem 1.5rem 1rem;
   button {
     :first-of-type {
       margin-right: 1rem;
@@ -91,9 +114,9 @@ const ArtistLinks = styled.div`
 `;
 
 const ArtistGallery = () => {
-  return (
+  return (<>
+  <Title>The Artists Behind The Project</Title>
     <Gallery>
-      <h2>The Artists Behind The Project</h2>
       {artists.length !== 0 &&
         artists.map((data) => (
           <Card key={data.name + data.community}>
@@ -120,6 +143,7 @@ const ArtistGallery = () => {
           </Card>
         ))}
     </Gallery>
+    </>
   );
 };
 
