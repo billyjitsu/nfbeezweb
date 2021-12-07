@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "./styles/theme";
 import App from "./App";
 import "remixicon/fonts/remixicon.css";
+require('dotenv').config();
 
 ReactDOM.render(
   <React.StrictMode>

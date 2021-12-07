@@ -4,8 +4,12 @@ import styled from "styled-components";
 import { Button } from "../Button";
 import NFT from "../../utils/NFT.json";
 import useStore from "../../store";
-import { contractAddress } from "../../data/contract";
+// import { contractAddress } from "../../data/contract";
 import { networkChainId } from "../../data/network";
+
+const CONTRACT_ADDRESS = process.env.REACT_APP_XDAI_CONTRACT
+console.log(`Current contract address is XDAI: ${CONTRACT_ADDRESS}`);
+
 
 const Notification = styled.div`
   display: flex;
@@ -150,7 +154,7 @@ const Minter = ({ mintTotal }) => {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(
-          contractAddress,
+          CONTRACT_ADDRESS,
           NFT.abi,
           signer
         );
@@ -218,7 +222,7 @@ const Minter = ({ mintTotal }) => {
           const provider = new ethers.providers.Web3Provider(ethereum);
           const signer = provider.getSigner();
           const connectedContract = new ethers.Contract(
-            contractAddress,
+            CONTRACT_ADDRESS,
             NFT.abi,
             signer
           );
