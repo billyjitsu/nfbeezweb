@@ -2,7 +2,7 @@ export const artists = [
   {
     name: "Gigadig",
     bio: "Lead Art Director for the NFBeez Project, Gigadig has his own unique style that community artists collaborated to bring you the NFTs we have today",
-    bee: "https://i.imgur.com/cG7RDuj.png",
+    bee: "https://i.imgur.com/cCiLijx.gif",
     community: "1hive",
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
@@ -101,7 +101,7 @@ export const artists = [
   {
     name: "Jean Andre",
     bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
-    bee: "https://i.imgur.com/cG7RDuj.png",
+    bee: "https://i.imgur.com/gLE3BlP.jpg",
     community: "xDai Punks",
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
