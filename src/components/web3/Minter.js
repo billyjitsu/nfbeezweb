@@ -6,7 +6,6 @@ import NFT from "../../utils/NFT.json";
 import useStore from "../../store";
 //import { contractAddress } from "../../data/contract";
 import { networkChainId } from "../../data/network";
-import 'dotenv/config';
 
 
 const contractAddress = process.env.REACT_APP_XDAI_CONTRACT;
