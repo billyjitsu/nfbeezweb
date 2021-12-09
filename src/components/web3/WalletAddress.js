@@ -93,7 +93,7 @@ const WalletAddress = () => {
   return (
     <>
       {error &&
-        account === "null"(
+        account === "null" &&(
           <a
             href="https://metamask.io/download.html"
             rel={"noreferrer"}
