@@ -51,7 +51,7 @@ export const artists = [
     community: "Token Engineering Commons",
     communityUrl: "https://tecommons.org/",
     portfolioUrl: "https://twitter.com",
-    marketplaceUrl: "https://opensea.io",
+    marketplaceUrl: "https://www.instagram.com/acidlazzer/",
   },
   {
     name: "Zer8",
