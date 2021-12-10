@@ -10,7 +10,7 @@ import useStore from "./store";
 import NFT from "./utils/NFT.json";
 import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
-import Larva from "./assets/bees/larva.gif";
+import Larva from "./assets/bees/banner.png";
 import Flow from "./assets/bees/test.png";
 
 const Main = styled.main`
@@ -43,48 +43,53 @@ const Hero = styled.section`
   @media (max-width: ${(props) => props.theme.breakpoints.s}) {
     padding: 0.5rem;
   }
+  img {
+    width: 16rem; 
+  }
+`;
+
+const BannerContain = styled.div`
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    text-align: center;
+  }
+`;
+
+
+const Banner = styled.img`
+
+  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
+    width: 200px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.s}) {
+    width: 200px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.m}) {
+    width 300px;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.l}) {
+    width 500px;
+  }
 `;
 
 const App = () => {
   let mintTotal = useStore((state) => state?.nftsToMint);
- // const [totalMinted, setTotalMinted] = useState(1);
-/*
-  useEffect(() => {
-    const mintsSoFar = async () => {
-      try {
-        const { ethereum } = window;
 
-        if (ethereum) {
-          const provider = new ethers.providers.Web3Provider(ethereum);
-          const signer = provider.getSigner();
-          const connectedContract = new ethers.Contract(
-            contractAddress,
-            NFT.abi,
-            signer
-          );
-
-          let totalMints = await connectedContract.totalSupply();
-          setTotalMinted(totalMints.toNumber());
-          console.log("Mints so far:", totalMints.toNumber());
-        } else {
-          console.log("Ethereum object doesn't exist!");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    mintsSoFar();
-  }, []);
-*/
   return (
     <Layout>
       <Nav focusMinter />
       <Main>
+        <BannerContain>
+          <Banner src={Larva} alt="Larvae"/>
+        </BannerContain>
         <Hero>
-        <h1>NFBeez</h1>
           <p>
-            <img src={Flow} alt="Larva" width="200" />
-            <br />
             A Collection of unique animated bees from the community artists at 1Hive, Agave,
             BrightID, TEC, Shapeshift and Gitcoin
             <br />
