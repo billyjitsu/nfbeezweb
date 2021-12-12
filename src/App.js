@@ -47,35 +47,7 @@ const Hero = styled.section`
 
 const App = () => {
   let mintTotal = useStore((state) => state?.nftsToMint);
- // const [totalMinted, setTotalMinted] = useState(1);
-/*
-  useEffect(() => {
-    const mintsSoFar = async () => {
-      try {
-        const { ethereum } = window;
 
-        if (ethereum) {
-          const provider = new ethers.providers.Web3Provider(ethereum);
-          const signer = provider.getSigner();
-          const connectedContract = new ethers.Contract(
-            contractAddress,
-            NFT.abi,
-            signer
-          );
-
-          let totalMints = await connectedContract.totalSupply();
-          setTotalMinted(totalMints.toNumber());
-          console.log("Mints so far:", totalMints.toNumber());
-        } else {
-          console.log("Ethereum object doesn't exist!");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    mintsSoFar();
-  }, []);
-*/
   return (
     <Layout>
       <Nav focusMinter />
