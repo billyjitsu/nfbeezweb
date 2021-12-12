@@ -130,6 +130,12 @@ const Minter = ({ mintTotal }) => {
           return;
         };
 
+        //If sold out, notify
+        if (totalMinted === 3333) {
+          alert('Sold Out!');
+          return;
+        };
+
         //console.log("Going to pop wallet now to pay gas...");
         let payment = String(numToMint * 0.01); //VERIFY!
         let totalGas
