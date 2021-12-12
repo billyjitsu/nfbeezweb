@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { ethers } from "ethers";
+//import { ethers } from "ethers";
 import Layout from "./components/Layout";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ArtistGallery from "./components/ArtistGallery";
 import Minter from "./components/web3/Minter";
 import useStore from "./store";
-import NFT from "./utils/NFT.json";
-import { contractAddress } from "./data/contract";
+//import NFT from "./utils/NFT.json";
+//import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
 import Larva from "./assets/bees/banner.png";
 import Flow from "./assets/bees/test.png";
