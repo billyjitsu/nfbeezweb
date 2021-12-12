@@ -97,43 +97,6 @@ const Minter = ({ mintTotal }) => {
     addNFTNum(e.target.value);
   };
 
-  /*
-  useEffect(() => {
-    const setupEventListener = async () => {
-      try {
-        const { ethereum } = window;
-
-        if (ethereum) {
-          const provider = new ethers.providers.Web3Provider(ethereum);
-          const signer = provider.getSigner();
-          const connectedContract = new ethers.Contract(
-            contractAddress,
-            NFT.abi,
-            signer
-          );
-          
-          //update minted totals
-          
-
-          //Testing Wallet event for exclusive events
-          // const accounts = await ethereum.request({ method: "eth_accounts" });
-          //console.log("account from event", accounts[0]);
-          // This will essentially "capture" our event when our contract throws it.
-          connectedContract.on("MintedNFT", (from) => {
-            console.log("from", from);
-              setNFTMinted(true);
-          });
-        } else {
-          console.log("Ethereum object doesn't exist!");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    setupEventListener();
-  }, []);
-*/
-
   const mintTokens = async () => {
     try {
       const { ethereum } = window;
@@ -191,7 +154,6 @@ const Minter = ({ mintTotal }) => {
         console.log(
            //  `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
              `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
-           //  `Mined, see transaction: https://blockscout.com/poa/sokol/tx/${nftTxn.hash}` //sokol
         );
       } else {
         console.log("Ethereum object doesn't exist!");

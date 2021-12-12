@@ -103,9 +103,9 @@ export const artists = [
     bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
     bee: "https://i.imgur.com/gLE3BlP.jpg",
     community: "xDai Punks",
-    communityUrl: "https://1hive.org",
+    communityUrl: "https://xdaipunks.com/",
     portfolioUrl: "https://twitter.com",
-    marketplaceUrl: "https://opensea.io",
+    marketplaceUrl: "https://xdaipunks.com/marketplace/",
   },
   
 ];

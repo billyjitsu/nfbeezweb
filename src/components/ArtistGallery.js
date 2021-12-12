@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { artists } from "../data/artists";
 import { Button } from "./Button";
-import Bee from "../assets/bees/artist1.png";
 
 const Gallery = styled.section`
   width: 100%;
