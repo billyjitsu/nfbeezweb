@@ -130,7 +130,7 @@ const Minter = ({ mintTotal }) => {
           return;
         };
 
-        console.log("Going to pop wallet now to pay gas...");
+        //console.log("Going to pop wallet now to pay gas...");
         let payment = String(numToMint * 0.01); //VERIFY!
         let totalGas
         if(numToMint < 2) {
@@ -144,17 +144,17 @@ const Minter = ({ mintTotal }) => {
         });
         setLoading(true);
         setNFTMinted(false);
-        console.log("Mining...please wait.");
+        //console.log("Mining...please wait.");
         await nftTxn.wait();
         setLoading(false);
         setTxn(nftTxn.hash);
         let newCount = await connectedContract.totalSupply();
         setTotalMinted(newCount.toNumber());
         setNFTMinted(true); // testing removing mint
-        console.log(
+        //console.log(
            //  `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`  //rinkeby
-             `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
-        );
+           //  `Mined, see transaction: https://blockscout.com/xdai/mainnet/tx/${nftTxn.hash}` //xdai
+        //);
       } else {
         console.log("Ethereum object doesn't exist!");
       }
