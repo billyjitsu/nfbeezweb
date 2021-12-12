@@ -74,7 +74,7 @@ const Banner = styled.img`
     width 300px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.l}) {
-    width 500px;
+    width 400px;
   }
 `;
 
