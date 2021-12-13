@@ -91,7 +91,7 @@ const App = () => {
         <Hero>
           <p>
             A Collection of unique animated bees from the community artists at 1Hive, Agave,
-            BrightID, TEC, Shapeshift and Gitcoin
+            BrightID, TEC, Shapeshift, xDai punks and Gitcoin
             <br />
             <br />
             <strong>Mint yours now for only 33 xDai</strong>
