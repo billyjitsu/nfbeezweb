@@ -95,16 +95,8 @@ const App = () => {
             <br />
             <strong>Mint yours now for only 33 xDai</strong>
           </p>
-          <Minter id="minter" mintTotal={mintTotal} />
-          {mintTotal < 1 && (
-            <HelperText>Please mint at least 1 nft.</HelperText>
-          )}
-          {mintTotal > 25 && (
-            <HelperText error>
-              Gas fees will be very high for more than 25 nfts. <br />
-              Please mint 25 nfts at a time at most, as contract will deny higher.
-            </HelperText>
-          )}
+          <h1>Coming Soon</h1>
+          <h1>Estimated Launch Date Dec 20</h1>
         </Hero>
         <ArtistGallery />
       </Main>
