@@ -11,7 +11,6 @@ import useStore from "./store";
 //import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
 import Larva from "./assets/bees/banner.png";
-import Flow from "./assets/bees/test.png";
 
 const Main = styled.main`
   padding: clamp(0.5rem, 2rem, 4rem);
