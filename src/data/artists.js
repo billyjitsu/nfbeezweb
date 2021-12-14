@@ -100,7 +100,7 @@ export const artists = [
   },
   {
     name: "Jean Andre",
-    bio: "Representing the the xDai Punks.  Bring their unique style to the NFBeez, the punks are wel established on the xDai network and have also just released a token: PUNK",
+    bio: "Representing the the xDai Punks.  Bring their unique style to the NFBeez, the punks are well established on the xDai network and have also just released a token: PUNK",
     bee: "https://i.imgur.com/gLE3BlP.jpg",
     community: "xDai Punks",
     communityUrl: "https://xdaipunks.com/",
