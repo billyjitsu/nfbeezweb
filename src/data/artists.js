@@ -64,7 +64,7 @@ export const artists = [
   },
   {
     name: "Fred",
-    bio: "Representing the the Gitcoin community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bio: "Representing the the Gitcoin community.  Gitcoin supports projects creating open source development and public goods by funding the teams behind the work",
     bee: "https://i.imgur.com/5PmqH8C.gif",
     community: "Gitcoin",
     communityUrl: "https://1hive.org",
@@ -73,7 +73,7 @@ export const artists = [
   },
   {
     name: "AnnAnna",
-    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bio: "Representing the the 1Hive community.  A canvas painter turned by trait, Ann took on a digital project to represent the bees in her unique style",
     bee: "https://i.imgur.com/0jEtw0i.png",
     community: "1Hive",
     communityUrl: "https://1hive.org",
@@ -91,7 +91,7 @@ export const artists = [
   },
   {
     name: "Harsh",
-    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bio: "Representing the the 1Hive community.  A dedicated 1Hive artist, Harsh is one of the artists behind much of the 1Hive materials that is being used currently",
     bee: "https://i.imgur.com/uAMVf97.png",
     community: "1Hive",
     communityUrl: "https://1hive.org",
@@ -100,7 +100,7 @@ export const artists = [
   },
   {
     name: "Jean Andre",
-    bio: "Representing the the 1Hive community.  Need filler information for this to be completed out.  Maybe another community or a bio to complete the space",
+    bio: "Representing the the xDai Punks.  Bring their unique style to the NFBeez, the punks are well established on the xDai network and have also just released a token: PUNK",
     bee: "https://i.imgur.com/gLE3BlP.jpg",
     community: "xDai Punks",
     communityUrl: "https://xdaipunks.com/",
