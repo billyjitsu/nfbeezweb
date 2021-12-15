@@ -64,16 +64,16 @@ const Banner = styled.img`
   align-items: center;
   margin: 30px;
   @media (min-width: ${(props) => props.theme.breakpoints.xs}) {
-    width: 200px;
+    width: 250px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.s}) {
-    width: 200px;
+    width: 250px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.m}) {
-    width 300px;
+    width 350px;
   }
   @media (min-width: ${(props) => props.theme.breakpoints.l}) {
-    width 400px;
+    width 500px;
   }
 `;
 
