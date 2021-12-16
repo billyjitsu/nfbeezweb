@@ -15,7 +15,7 @@ export const artists = [
     community: "Agave and 1Hive Gardens",
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
-    marketplaceUrl: "https://opensea.io",
+    marketplaceUrl: "https://xdai.unique.one/profile/Rohekbenitez",
   },
   {
     name: "Gray Machine",
