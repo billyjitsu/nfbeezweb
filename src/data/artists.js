@@ -28,7 +28,7 @@ export const artists = [
   },
   {
     name: "Dama",
-    bio: "Representing the the BrightID community.  Currently BrightID created their own DAO using 1Hive's Gardens tool to help govern their Anti-sybil network system",
+    bio: "Representing the BrightID community.  Currently BrightID created their own DAO using 1Hive's Gardens tool to help govern their Anti-sybil network system",
     bee: "https://i.imgur.com/c6uJBOG.gif",
     community: "Bright ID",
     communityUrl: "https://www.brightid.org/",
@@ -46,7 +46,7 @@ export const artists = [
   },
   {
     name: "AcidLazzer",
-    bio: "Representing the the TEC community.  Currently 1Hive and TEC members are working together to create a new tokenomics system designed by the community.",
+    bio: "Representing the TEC community.  Currently 1Hive and TEC members are working together to create a new tokenomics system designed by the community.",
     bee: "https://i.imgur.com/M5uFZPO.gif",
     community: "Token Engineering Commons",
     communityUrl: "https://tecommons.org/",
@@ -55,7 +55,7 @@ export const artists = [
   },
   {
     name: "Zer8",
-    bio: "Representing the the 1Hive community.  A cross community specialist, Zer8 promotes publics goods and supports many charities in his local area",
+    bio: "Representing the 1Hive community.  A cross community specialist, Zer8 promotes publics goods and supports many charities in his local area",
     bee: "https://i.imgur.com/l4LYEbZ.gif",
     community: "1Hive",
     communityUrl: "https://1hive.org",
@@ -64,7 +64,7 @@ export const artists = [
   },
   {
     name: "Fred",
-    bio: "Representing the the Gitcoin community.  Gitcoin supports projects creating open source development and public goods by funding the teams behind the work",
+    bio: "Representing the Gitcoin community.  Gitcoin supports projects creating open source development and public goods by funding the teams behind the work",
     bee: "https://i.imgur.com/5PmqH8C.gif",
     community: "Gitcoin",
     communityUrl: "https://1hive.org",
@@ -73,7 +73,7 @@ export const artists = [
   },
   {
     name: "AnnAnna",
-    bio: "Representing the the 1Hive community.  A canvas painter turned by trait, Ann took on a digital project to represent the bees in her unique style",
+    bio: "Representing the 1Hive community.  A canvas painter turned by trait, Ann took on a digital project to represent the bees in her unique style",
     bee: "https://i.imgur.com/5rhudBT.gif",
     community: "1Hive",
     communityUrl: "https://1hive.org",
@@ -100,7 +100,7 @@ export const artists = [
   },
   {
     name: "Jean Andre",
-    bio: "Representing the the xDai Punks.  Bring their unique style to the NFBeez, the punks are well established on the xDai network and have also just released a token: PUNK",
+    bio: "Representing the xDai Punks.  Bring their unique style to the NFBeez, the punks are well established on the xDai network and have also just released a token: PUNK",
     bee: "https://i.imgur.com/9sKQ80s.gif",
     community: "xDai Punks",
     communityUrl: "https://xdaipunks.com/",
