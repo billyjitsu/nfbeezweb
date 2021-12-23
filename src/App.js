@@ -96,7 +96,7 @@ const App = () => {
             <strong>Mint yours now for only 33 xDai</strong>
           </p>
           <h1>Coming Soon</h1>
-          <h1>Estimated Launch Date Dec 24-26</h1>
+          <h1>Estimated Launch Date Dec 24-27</h1>
         </Hero>
         <ArtistGallery />
       </Main>
