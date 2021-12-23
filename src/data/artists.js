@@ -91,7 +91,7 @@ export const artists = [
   },
   {
     name: "Harsh",
-    bio: "Representing the the 1Hive community.  A dedicated 1Hive artist, Harsh is one of the artists behind much of the 1Hive materials that is being used currently",
+    bio: "Representing the 1Hive community.  A dedicated 1Hive artist, Harsh is one of the artists behind much of the 1Hive materials that is being used currently",
     bee: "https://i.imgur.com/sJfm5Hr.gif",
     community: "1Hive",
     communityUrl: "https://1hive.org",
