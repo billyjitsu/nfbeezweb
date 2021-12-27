@@ -33,7 +33,7 @@ export const artists = [
     community: "Bright ID",
     communityUrl: "https://www.brightid.org/",
     portfolioUrl: "https://twitter.com",
-    marketplaceUrl: "https://paintswap.finance/",
+    marketplaceUrl: "https://opensea.io/collection/we-are-mushroom",
   },
   {
     name: "Ata",
