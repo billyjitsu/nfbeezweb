@@ -55,7 +55,7 @@ export const artists = [
   },
   {
     name: "Zer8",
-    bio: "Representing the 1Hive community.  A cross community specialist, Zer8 promotes publics goods and supports many charities in his local area",
+    bio: "A cross community specialist, Zer8 promotes publics goods, supports many charities in his local area and is on a goal to onboard people/projects to web3",
     bee: "https://i.imgur.com/l4LYEbZ.gif",
     community: "1Hive",
     communityUrl: "https://1hive.org",
