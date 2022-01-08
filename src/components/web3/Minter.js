@@ -131,7 +131,7 @@ const Minter = ({ mintTotal }) => {
         };
 
         //If sold out, notify
-        if (totalMinted === 3333) {
+        if (totalMinted === 2525) {
           alert('Sold Out!');
           return;
         };
@@ -199,7 +199,7 @@ const Minter = ({ mintTotal }) => {
   return (
     <>
       <p>
-        <strong>{totalMinted}/3,333</strong> minted so far
+        <strong>{totalMinted}/2,525</strong> minted so far
       </p>
       {nftMinted && (
       <>

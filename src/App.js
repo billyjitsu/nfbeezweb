@@ -93,7 +93,7 @@ const App = () => {
             BrightID, TEC, Shapeshift, xDai punks and Gitcoin
             <br />
             <br />
-            <strong>Mint yours now for only 33 xDai</strong>
+            <strong>Mint yours now for only 39 xDai</strong>
           </p>
           <Minter id="minter" mintTotal={mintTotal} />
           {mintTotal < 1 && (
