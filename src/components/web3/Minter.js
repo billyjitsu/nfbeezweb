@@ -6,6 +6,7 @@ import NFT from "../../utils/NFT.json";
 import useStore from "../../store";
 import { contractAddress } from "../../data/contract";
 import { networkChainId } from "../../data/network";
+import axios from 'axios';
 
 const Notification = styled.div`
   display: flex;
@@ -87,6 +88,10 @@ const Minter = ({ mintTotal }) => {
 
   const [currentAccount, setCurrentAccount] = useState("");
 
+  //nader
+  const [nfts, setNfts] = useState([]);
+  const [loadingState, setLoadingState] = useState('not-loaded');
+
   const handleChange = (e) => {
     setNumToMint(e.target.value);
     addNFTNum(e.target.value);
@@ -128,6 +133,42 @@ const Minter = ({ mintTotal }) => {
     setupEventListener();
   }, []);
 */
+
+  const loadNFTs = async () => {
+    try {
+      const { ethereum } = window;
+
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const connectedContract = new ethers.Contract(
+            contractAddress,
+            NFT.abi,
+            signer
+          );
+
+        const data = await connectedContract.walletOfOwner("0x9263bFf6ACCb60E83254E95220e7637465298171") //need wallet address here
+          console.log("data", data);
+
+          //map over things
+          //const items = await Promise.all(data.map(async i => {
+            const tokenUri = await connectedContract.tokenURI(1);
+            console.log("uri", tokenUri);
+           // console.log("tokenID", i.tokenId.toNumber());
+            const meta = await axios.get(tokenUri);
+           // console.log("meta", meta);
+           
+          //}))
+          
+
+          // finish of the mapping
+      } else {
+          console.log("Ethereum object doesn't exist!");
+        }
+    } catch (error) {
+      console.log(error);
+      }
+  }
 
   const mintTokens = async () => {
     try {
@@ -289,6 +330,7 @@ const Minter = ({ mintTotal }) => {
             value={numToMint}
           ></MintNumInput>
           <MintButton onClick={mintTokens}>Mint NFTs</MintButton>
+          <MintButton onClick={loadNFTs}>Load NFTs</MintButton>
         </Mint>
       )}
     </>
