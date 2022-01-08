@@ -93,10 +93,9 @@ const App = () => {
             BrightID, GUStakes, TEC, Shapeshift, xDai punks and Gitcoin
             <br />
             <br />
-            <strong>Mint yours now for only 33 xDai</strong>
+            <strong>Mint yours now for only 39 xDai</strong>
           </p>
           <h1>Coming Soon</h1>
-          <h1>Tune in to twitter/Discord for more details</h1>
         </Hero>
         <ArtistGallery />
       </Main>
