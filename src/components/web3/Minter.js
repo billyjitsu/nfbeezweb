@@ -162,7 +162,7 @@ const Minter = ({ mintTotal }) => {
           return;
         };
 
-        if (totalMinted === 2525) {
+        if (totalMinted === 20) {
           alert('Sold Out!');
           return;
         };
