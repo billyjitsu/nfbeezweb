@@ -101,7 +101,6 @@ const App = () => {
           )}
           {mintTotal > 25 && (
             <HelperText error>
-              Gas fees will be very high for more than 25 nfts. <br />
               Please mint 25 nfts at a time at most, as contract will deny higher.
             </HelperText>
           )}
