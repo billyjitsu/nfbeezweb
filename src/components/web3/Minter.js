@@ -137,7 +137,7 @@ const Minter = ({ mintTotal }) => {
         };
 
         //console.log("Going to pop wallet now to pay gas...");
-        let payment = String(numToMint * 0.01); //VERIFY!
+        let payment = String(numToMint * 39); //VERIFY!
         let totalGas
         if(numToMint < 2) {
           totalGas = String(numToMint * 2400000);
