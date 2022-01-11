@@ -131,13 +131,13 @@ const Minter = ({ mintTotal }) => {
         };
 
         //If sold out, notify
-        if (totalMinted === 3333) {
+        if (totalMinted === 2525) {
           alert('Sold Out!');
           return;
         };
 
         //console.log("Going to pop wallet now to pay gas...");
-        let payment = String(numToMint * 0.01); //VERIFY!
+        let payment = String(numToMint * 39); //VERIFY!
         let totalGas
         if(numToMint < 2) {
           totalGas = String(numToMint * 2400000);
@@ -199,7 +199,7 @@ const Minter = ({ mintTotal }) => {
   return (
     <>
       <p>
-        <strong>{totalMinted}/3,333</strong> minted so far
+        <strong>{totalMinted}/2,525</strong> minted so far
       </p>
       {nftMinted && (
       <>
