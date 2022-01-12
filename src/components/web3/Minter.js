@@ -65,7 +65,7 @@ const MintNumInput = styled.input.attrs((props) => ({
 `;
 
 const MintButton = styled(Button)`
-  border-radius: 0px 50px 50px 0px;
+  border-radius: 50px 50px 50px 50px;
   padding: 0.75rem 1.5rem;
   background-color: ${(p) => p.theme.colors.greenBase};
   :hover {
@@ -288,14 +288,13 @@ const Minter = ({ mintTotal }) => {
 
   return (
     <>
-      <p>
-        <strong>{totalMinted}/300</strong> minted so far
-      </p>  
+      
       {!nftMinted && (
        <>
         <Mint>
           <MintButton onClick={loadNFTs}>Load NFTs</MintButton>
         </Mint>
+        <br/>
         <div>     {nfts.map(nft => <img src={`https://nfbeez.mypinata.cloud/ipfs/QmUaHNzF65Hzx2Nro2TnuksKeaRmvKHtHpLLoy3GxLtiUD/${nft}.png`}></img>) }                                  </div>
 
       </>

@@ -53,26 +53,18 @@ const App = () => {
       <Nav focusMinter />
       <Main>
         <Hero>
-        <h1>NFBeez</h1>
+
           <p>
-            <img src={Flow} alt="Larva" width="200" />
+            <img src={Flow} alt="Larva" width="400" />
             <br />
             A Collection of unique animated bees from the community artists at 1Hive, Agave,
             BrightID, TEC, Shapeshift and Gitcoin
             <br />
             <br />
-            <strong>Mint yours now.</strong>
+            <strong>See your NFBeez</strong>
           </p>
-          <Minter id="minter" mintTotal={mintTotal} />
-          {mintTotal < 1 && (
-            <HelperText>Please mint at least 1 nft.</HelperText>
-          )}
-          {mintTotal > 25 && (
-            <HelperText error>
-              Gas fees will be very high for more than 25 nfts. <br />
-              Please mint 25 nfts at a time at most, as contract will deny higher.
-            </HelperText>
-          )}
+          <Minter id="minter" mintTotal={mintTotal} /> 
+        
         </Hero>
         
       </Main>
