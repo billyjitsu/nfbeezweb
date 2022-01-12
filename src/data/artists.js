@@ -10,9 +10,9 @@ export const artists = [
   },
   {
     name: "Rohekbenitez",
-    bio: "Representing Agave and Gardens, Rohek is one of many artists that contribute to the 1Hive art, NFT and POAP giveaways that 1Hive provides during events.",
+    bio: "Representing multiDAO, Rohek is one of many artists that contribute to the 1Hive art, NFT and POAP giveaways that 1Hive provides during events.",
     bee: "https://i.imgur.com/jTdjaCd.gif",
-    community: "Agave and 1Hive Gardens",
+    community: "Agave, GUStakes and 1Hive Gardens",
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
     marketplaceUrl: "https://xdai.unique.one/profile/Rohekbenitez",
