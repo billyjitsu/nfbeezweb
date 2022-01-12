@@ -152,9 +152,8 @@ const Minter = ({ mintTotal }) => {
          // console.log("accounts", accounts);
           const account = accounts.toString();
           
-        //const data = await connectedContract.walletOfOwner(account) //need wallet address here
-        const data = await connectedContract.walletOfOwner("0xc4e1c8152eeb4b45b9d83c1faa49df092df08d51");
-
+        const data = await connectedContract.walletOfOwner(account) //need wallet address here
+       
         //  console.log("data", data);
          // let big = data[0].toNumber();
         //  console.log("data[0]", data[0]);
