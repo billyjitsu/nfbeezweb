@@ -55,9 +55,10 @@ const App = () => {
         <Hero>
 
           <p>
-            <img src={Flow} alt="Larva" width="400" />
+            <img src={Flow} alt="Larva" width="350" />
             <br />
-            Brought to you by the NFBeez Team <br/>
+            <strong>Brought To you by the NFBeez Team</strong> <br/>
+            <strong>Check us out @ https://www.nfbeez.xyz/ </strong> <br/>
             A Collection of unique animated bees from the community artists at 1Hive, Agave,
             BrightID, GUStakes, TEC, Shapeshift, xDai punks and Gitcoin
             <br />
