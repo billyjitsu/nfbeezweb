@@ -149,19 +149,19 @@ const Minter = ({ mintTotal }) => {
           );
 
         const accounts = await ethereum.request({ method: "eth_accounts" });
-          console.log("accounts", accounts);
+         // console.log("accounts", accounts);
           const account = accounts.toString();
           
         const data = await connectedContract.walletOfOwner(account) //need wallet address here
-          console.log("data", data);
+        //  console.log("data", data);
          // let big = data[0].toNumber();
-          console.log("data[0]", data[0]);
+        //  console.log("data[0]", data[0]);
          // console.log("big", big);
           let converted = [];
           for (let i = 0; i< data.length; i++){
             let bigNum = data[i].toNumber();
            converted.push(bigNum);
-          console.log("converted", converted);
+          //console.log("converted", converted);
          // console.log("bigNum", bigNum);
           }
          // display = data;
@@ -169,8 +169,8 @@ const Minter = ({ mintTotal }) => {
           console.log("setNFTs", nfts);
           //map over things
           //const items = await Promise.all(data.map(async i => {
-            const tokenUri = await connectedContract.tokenURI(1);
-            console.log("uri", tokenUri);
+           // const tokenUri = await connectedContract.tokenURI(1);
+           // console.log("uri", tokenUri);
            // console.log("tokenID", i.tokenId.toNumber());
             //const meta = await axios.get(tokenUri);
            // console.log("meta", meta);
