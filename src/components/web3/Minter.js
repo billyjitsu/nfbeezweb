@@ -154,8 +154,18 @@ const Minter = ({ mintTotal }) => {
           
         const data = await connectedContract.walletOfOwner(account) //need wallet address here
           console.log("data", data);
+         // let big = data[0].toNumber();
+          console.log("data[0]", data[0]);
+         // console.log("big", big);
+          let converted = [];
+          for (let i = 0; i< data.length; i++){
+            let bigNum = data[i].toNumber();
+           converted.push(bigNum);
+          console.log("converted", converted);
+         // console.log("bigNum", bigNum);
+          }
          // display = data;
-         setNfts([1,2,3]);
+         setNfts(converted);
           console.log("setNFTs", nfts);
           //map over things
           //const items = await Promise.all(data.map(async i => {
@@ -286,9 +296,8 @@ const Minter = ({ mintTotal }) => {
         <Mint>
           <MintButton onClick={loadNFTs}>Load NFTs</MintButton>
         </Mint>
-        <div> {nfts} </div>
+        <div>     {nfts.map(nft => <img src={`https://nfbeez.mypinata.cloud/ipfs/QmUaHNzF65Hzx2Nro2TnuksKeaRmvKHtHpLLoy3GxLtiUD/${nft}.png`}></img>) }                                  </div>
 
-        <div>test</div>
       </>
       )}
     </>
