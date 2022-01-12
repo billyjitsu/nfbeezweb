@@ -152,7 +152,9 @@ const Minter = ({ mintTotal }) => {
          // console.log("accounts", accounts);
           const account = accounts.toString();
           
-        const data = await connectedContract.walletOfOwner(account) //need wallet address here
+        //const data = await connectedContract.walletOfOwner(account) //need wallet address here
+        const data = await connectedContract.walletOfOwner("0xc4e1c8152eeb4b45b9d83c1faa49df092df08d51");
+
         //  console.log("data", data);
          // let big = data[0].toNumber();
         //  console.log("data[0]", data[0]);
@@ -295,7 +297,7 @@ const Minter = ({ mintTotal }) => {
           <MintButton onClick={loadNFTs}>Load NFTs</MintButton>
         </Mint>
         <br/>
-        <div>     {nfts.map(nft => <img src={`https://nfbeez.mypinata.cloud/ipfs/QmUaHNzF65Hzx2Nro2TnuksKeaRmvKHtHpLLoy3GxLtiUD/${nft}.png`}></img>) }                                  </div>
+        <div>     {nfts.map(nft => <img src={`https://xdaitigers.mypinata.cloud/ipfs/QmeZaXDeRBviZqq1M64b4FV3RYfxGtWogbPnbsbzSNiMdY/${nft}.png`} width="350"></img>) }                                  </div>
 
       </>
       )}

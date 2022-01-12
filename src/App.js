@@ -57,11 +57,12 @@ const App = () => {
           <p>
             <img src={Flow} alt="Larva" width="400" />
             <br />
+            Brought to you by the NFBeez Team <br/>
             A Collection of unique animated bees from the community artists at 1Hive, Agave,
             BrightID, GUStakes, TEC, Shapeshift, xDai punks and Gitcoin
             <br />
             <br />
-            <strong>See your NFBeez</strong>
+            <strong>See your Tigers</strong>
           </p>
           <Minter id="minter" mintTotal={mintTotal} /> 
         
