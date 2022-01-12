@@ -74,7 +74,7 @@ const App = () => {
             </HelperText>
           )}
         </Hero>
-        <ArtistGallery />
+        
       </Main>
 
       <Footer />

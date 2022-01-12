@@ -88,10 +88,11 @@ const Minter = ({ mintTotal }) => {
 
   const [currentAccount, setCurrentAccount] = useState("");
 
+  let display = [];
   //nader
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState('not-loaded');
-
+  
   const handleChange = (e) => {
     setNumToMint(e.target.value);
     addNFTNum(e.target.value);
@@ -147,15 +148,21 @@ const Minter = ({ mintTotal }) => {
             signer
           );
 
-        const data = await connectedContract.walletOfOwner("0x9263bFf6ACCb60E83254E95220e7637465298171") //need wallet address here
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+          console.log("accounts", accounts);
+          const account = accounts.toString();
+          
+        const data = await connectedContract.walletOfOwner(account) //need wallet address here
           console.log("data", data);
-
+         // display = data;
+         setNfts([1,2,3]);
+          console.log("setNFTs", nfts);
           //map over things
           //const items = await Promise.all(data.map(async i => {
             const tokenUri = await connectedContract.tokenURI(1);
             console.log("uri", tokenUri);
            // console.log("tokenID", i.tokenId.toNumber());
-            const meta = await axios.get(tokenUri);
+            //const meta = await axios.get(tokenUri);
            // console.log("meta", meta);
            
           //}))
@@ -198,7 +205,7 @@ const Minter = ({ mintTotal }) => {
         const chainId = network.chainId; 
         //hardcoded for rinkeby
         //if not on chain break / return the function
-        if (chainId !== 4) {
+        if (chainId !== 100) {
           alert('Please make sure you are on Rinkeby Network');
           return;
         };
@@ -273,65 +280,16 @@ const Minter = ({ mintTotal }) => {
     <>
       <p>
         <strong>{totalMinted}/300</strong> minted so far
-      </p>
-      {nftMinted && (
-      <>
-        <Notification>
-          <p>Your NFTs have been minted!</p>
-          <a
-            href={`https://rinkeby.etherscan.io/tx/${txn}`}
-            rel={"noreferrer"}
-            target="_blank"
-          >
-            <Button>View transaction</Button>
-            <p> </p>
-          </a>
-          <a
-            href={`https://testnets.opensea.io/collection/xdairedo7`}
-            rel={"noreferrer"}
-            target="_blank"
-          >
-            <Button>Visit the collection</Button>
-          </a>
-        </Notification>
-        <p></p>
-        <Mint>
-          <MintNumInput
-            placeholder="# of NFTs"
-            min="1"
-            max="10"
-            name="mintTotal"
-            onChange={handleChange}
-            value={numToMint}
-          ></MintNumInput>
-          <MintButton onClick={mintTokens}>Mint NFTs</MintButton>
-        </Mint>
-      </>
-      )}
-      {loading && (
-        <>
-        <Notification>
-          <p>
-            Your tokens are minting. Please wait a few minutes. This message
-            will be replaced with your transaction once minted.
-          </p>
-        </Notification>
-        <br />
-        </>
-      )}
+      </p>  
       {!nftMinted && (
+       <>
         <Mint>
-          <MintNumInput
-            placeholder="# of NFTs"
-            min="1"
-            max="10"
-            name="mintTotal"
-            onChange={handleChange}
-            value={numToMint}
-          ></MintNumInput>
-          <MintButton onClick={mintTokens}>Mint NFTs</MintButton>
           <MintButton onClick={loadNFTs}>Load NFTs</MintButton>
         </Mint>
+        <div> {nfts} </div>
+
+        <div>test</div>
+      </>
       )}
     </>
   );

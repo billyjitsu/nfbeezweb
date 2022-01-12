@@ -64,7 +64,7 @@ const WalletAddress = () => {
     const network = await provider.getNetwork();
     const chainId = network.chainId;
     // Hardcoded for rinkeby - Hex value issues
-    if (chainId !== 4) {
+    if (chainId !== 100) {
       setWrongNetwork(true);
     }
     if(newAccount !== undefined) {
