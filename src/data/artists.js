@@ -73,9 +73,9 @@ export const artists = [
   },
   {
     name: "AnnAnna",
-    bio: "Representing the 1Hive community.  A canvas painter turned by trait, Ann took on a digital project to represent the bees in her unique style",
+    bio: "Representing 1Hive community and Mafia Creativa.  A canvas painter turned by trait, Ann took on a digital project to represent the bees in her unique style",
     bee: "https://i.imgur.com/corZoaO.gif",
-    community: "1Hive",
+    community: "1Hive and Mafia Creativa",
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
     marketplaceUrl: "https://opensea.io/AnnAnna96",
