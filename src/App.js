@@ -95,7 +95,9 @@ const App = () => {
             <br />
             <strong>Mint yours now for only 39 xDai</strong>
             <br />
-            <strong>Minting will start in less than 24 hours!</strong>
+            <strong>Minting will start 6:30AM PACIFIC TIME!</strong>
+            <br />
+            <strong>Limited hardware wallet support</strong>
           </p>
           <Minter id="minter" mintTotal={mintTotal} />
           {mintTotal < 1 && (
