@@ -94,6 +94,8 @@ const App = () => {
             <br />
             <br />
             <strong>Mint yours now for only 39 xDai</strong>
+            <br />
+            <strong>Minting will start in less than 24 hours!</strong>
           </p>
           <Minter id="minter" mintTotal={mintTotal} />
           {mintTotal < 1 && (
