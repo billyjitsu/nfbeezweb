@@ -96,7 +96,7 @@ export const artists = [
     community: "1Hive",
     communityUrl: "https://1hive.org",
     portfolioUrl: "https://twitter.com",
-    marketplaceUrl: "https://opensea.io",
+    marketplaceUrl: "https://xdai.unique.one/collections/0xDBb3CD78b3841547B1A4930e241a5531d2af9911",
   },
   {
     name: "Jean Andre",
