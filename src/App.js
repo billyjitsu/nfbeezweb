@@ -99,15 +99,7 @@ const App = () => {
             <br />
             <strong>Limited hardware wallet support</strong>
           </p>
-          <Minter id="minter" mintTotal={mintTotal} />
-          {mintTotal < 1 && (
-            <HelperText>Please mint at least 1 nft.</HelperText>
-          )}
-          {mintTotal > 25 && (
-            <HelperText error>
-              Please mint 25 nfts at a time at most, as contract will deny higher.
-            </HelperText>
-          )}
+          
         </Hero>
         <ArtistGallery />
       </Main>
