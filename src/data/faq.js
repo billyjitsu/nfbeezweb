@@ -37,6 +37,9 @@ const faq = () => {
             <h5>vote.nfbeez.xyz</h5>
           </a>
       </p>
+      <h4>Upcoming votes</h4>
+      <p>Deciding on vote weight for pure Legendary/Mythical NFTs</p>
+      <p>Possibly launching on another chain</p>
   </FaqLayout>
   );
 };
