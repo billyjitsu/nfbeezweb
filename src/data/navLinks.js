@@ -7,8 +7,8 @@ export const navLinks = [
     siteName: "Discord",
     url: "https://discord.gg/4fm7pgB",
   },
- /* {
-    siteName: "Epor",
-    url: "https://epor.io",
-  }, */
+  {
+    siteName: "Vote",
+    url: "https://vote.nfbeez.xyz/#/",
+  },
 ];

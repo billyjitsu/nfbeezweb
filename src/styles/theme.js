@@ -151,6 +151,33 @@ a{
   }
 }
 
+b{
+  text-decoration: none;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.06em;
+  margin: 0 4rem 0 0;
+  /* unvisited link */
+  :link {
+  color: ${(p) => p.theme.colors.greyDark};
+  }
+  /* visited link */
+  :visited {
+    color: ${(p) => p.theme.colors.greyDark + 80};
+  }
+  /* mouse over link */
+  :hover {
+    color: ${(p) => p.theme.colors.greyMedium};
+  }
+  /* selected link */
+  :active {
+    color: ${(p) => p.theme.colors.greyMedium};
+    font-weight: bold;
+  }
+}
+
 
 h1 {
     font-size: 3rem;
@@ -187,7 +214,7 @@ h1 {
   h4 {
     font-size: 1.25rem;
     line-height: 1.4;
-    font-weight: 500;
+    font-weight: 600;
     margin: 2rem 0;
     @media (max-width: ${theme.breakpoints.m}) {
       font-size: 1rem;
@@ -206,6 +233,17 @@ h1 {
     font-weight: 400;
     text-transform: uppercase;
     margin: 2rem 0;
+  }
+
+  h7 {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin: 2rem 0;
+    margin-top: 3rem;
+    font-weight: 600;
+    @media (max-width: ${theme.breakpoints.m}) {
+      font-size: 1.5rem;
+    }
   }
 
   button{

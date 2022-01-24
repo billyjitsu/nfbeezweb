@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import ArtistGallery from "./components/ArtistGallery";
 import Minter from "./components/web3/Minter";
 import useStore from "./store";
+import Faq from "./data/faq";
 //import NFT from "./utils/NFT.json";
 //import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
@@ -108,6 +109,7 @@ const App = () => {
           )}
         </Hero>
         <ArtistGallery />
+        <Faq/>
       </Main>
 
       <Footer />
