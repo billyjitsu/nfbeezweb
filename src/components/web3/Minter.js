@@ -171,13 +171,18 @@ const Minter = ({ mintTotal }) => {
           //map over things
 
           //const items = await Promise.all(data.map(async i => {
-          const items = await Promise.all(nfts.map (async n => {
+          let items = await Promise.all(nfts.map (async n => {
 
               const tokenUri = await connectedContract.tokenURI(n);
               //console.log("uri", tokenUri);
-              const theFetch = fetch(tokenUri);
-              console.log("theFetch", theFetch);
-           
+              const theFetch = await fetch(tokenUri);
+              //console.log("theFetch", theFetch);
+              const theJson = await theFetch.json();
+              console.log("theJson return:", theJson);
+              console.log("JSON Name", theJson.name);
+              console.log("JSON Attributes:", theJson.attributes);
+
+              /*
               theFetch.then(response => {
               //console.log(response, "the response");
               return response.json();
@@ -193,8 +198,8 @@ const Minter = ({ mintTotal }) => {
               //console.log("tokenID attributes", tokenIds.attributes);
               //console.log("item", item)
               return item;
-              });
-          
+              });  */
+              return theJson;
           }));
 
           setNftData(items);
@@ -308,6 +313,12 @@ const Minter = ({ mintTotal }) => {
     mintsSoFar();
   }, []);
 
+/*
+<div>    
+           {nfts.map(nft => <img src={`https://nfbeez.mypinata.cloud/ipfs/QmUaHNzF65Hzx2Nro2TnuksKeaRmvKHtHpLLoy3GxLtiUD/${nft}.png`}></img>) }                                 
+        </div>
+      */
+
   return (
     <>
       
@@ -317,7 +328,18 @@ const Minter = ({ mintTotal }) => {
           <MintButton onClick={loadNFTs}>Load NFTs</MintButton>
         </Mint>
         <br/>
-        <div>     {nfts.map(nft => <img src={`https://nfbeez.mypinata.cloud/ipfs/QmUaHNzF65Hzx2Nro2TnuksKeaRmvKHtHpLLoy3GxLtiUD/${nft}.png`}></img>) }                                  </div>
+        <>
+        <Notification>
+        <div>
+          {nftData.map(nftd => 
+            <div>
+              <img src={nftd.image}></img> 
+              <p>{nftd.name}</p>
+            </div>
+              )}
+        </div>
+        </Notification>
+        </>
 
       </>
       )}
