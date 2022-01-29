@@ -92,6 +92,7 @@ const Minter = ({ mintTotal }) => {
   //nader
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState('not-loaded');
+  const [nftData, setNftData] = useState([]);
   
   const handleChange = (e) => {
     setNumToMint(e.target.value);
@@ -153,7 +154,7 @@ const Minter = ({ mintTotal }) => {
           const account = accounts.toString();
           
         const data = await connectedContract.walletOfOwner(account) //need wallet address here
-        //  console.log("data", data);
+          console.log("data", data);
          // let big = data[0].toNumber();
         //  console.log("data[0]", data[0]);
          // console.log("big", big);
@@ -162,21 +163,42 @@ const Minter = ({ mintTotal }) => {
             let bigNum = data[i].toNumber();
            converted.push(bigNum);
           //console.log("converted", converted);
-         // console.log("bigNum", bigNum);
+          console.log("bigNum", bigNum);
           }
          // display = data;
          setNfts(converted);
           console.log("setNFTs", nfts);
           //map over things
+
           //const items = await Promise.all(data.map(async i => {
-           // const tokenUri = await connectedContract.tokenURI(1);
-           // console.log("uri", tokenUri);
-           // console.log("tokenID", i.tokenId.toNumber());
-            //const meta = await axios.get(tokenUri);
-           // console.log("meta", meta);
+          const items = await Promise.all(nfts.map (async n => {
+
+              const tokenUri = await connectedContract.tokenURI(n);
+              //console.log("uri", tokenUri);
+              const theFetch = fetch(tokenUri);
+              console.log("theFetch", theFetch);
            
-          //}))
+              theFetch.then(response => {
+              //console.log(response, "the response");
+              return response.json();
+               }).then(tokenIds => {
+              const item = {
+                Name: tokenIds.name,
+                Image: tokenIds.image,
+                Attributes: tokenIds.attributes,
+              }
+              //console.log("the token IDs:", tokenIds);
+              //console.log("tokenID name:", tokenIds.name);
+              //console.log("tokenID image", tokenIds.image);
+              //console.log("tokenID attributes", tokenIds.attributes);
+              //console.log("item", item)
+              return item;
+              });
           
+          }));
+
+          setNftData(items);
+          console.log("NFT DATA:", nftData);
 
           // finish of the mapping
       } else {
