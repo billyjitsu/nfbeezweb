@@ -97,6 +97,8 @@ const App = () => {
             <strong>Mint yours now for only 39 xDai</strong>
             <br />
             <strong>Limited hardware wallet support</strong>
+            <br />
+            <strong>Epor.io having sync issues, please use block explorer</strong>
           </p>
           <Minter id="minter" mintTotal={mintTotal} />
           {mintTotal < 1 && (
