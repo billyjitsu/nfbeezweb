@@ -98,7 +98,7 @@ const App = () => {
             <br />
             <strong>Limited hardware wallet support</strong>
             <br />
-            <strong>Epor.io having sync issues, please use block explorer</strong>
+            <strong>Epor.io having sync issues, please use block explorer or temp image viewer</strong>
           </p>
           <Minter id="minter" mintTotal={mintTotal} />
           {mintTotal < 1 && (
