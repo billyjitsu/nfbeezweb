@@ -219,6 +219,7 @@ const Minter = ({ mintTotal }) => {
             target="_blank"
           >
             <Button>Visit Epor to view</Button>
+            <p> </p>
           </a>
           <a
             href={`http://mybee.nfbeez.xyz/`}
