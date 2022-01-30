@@ -220,6 +220,13 @@ const Minter = ({ mintTotal }) => {
           >
             <Button>Visit Epor to view</Button>
           </a>
+          <a
+            href={`http://mybee.nfbeez.xyz/`}
+            rel={"noreferrer"}
+            target="_blank"
+          >
+            <Button>Temp NFT Viewer</Button>
+          </a>
         </Notification>
         <p></p>
         <Mint>
