@@ -222,11 +222,11 @@ const Minter = ({ mintTotal }) => {
             <p> </p>
           </a>
           <a
-            href={`http://mybee.nfbeez.xyz/`}
+            href={`https://docs.google.com/spreadsheets/d/12XA8kZv0zG3QVkYlF8RjGj7LhHg-EaQmDOWnN28kxjA/edit#gid=0`}
             rel={"noreferrer"}
             target="_blank"
           >
-            <Button>Temp NFT Viewer</Button>
+            <Button>Rarity Sheet</Button>
           </a>
         </Notification>
         <p></p>
