@@ -174,7 +174,7 @@ const Minter = ({ mintTotal }) => {
           let items = await Promise.all(nfts.map (async n => {
 
               const tokenUri = await connectedContract.tokenURI(n);
-              //console.log("uri", tokenUri);
+              console.log("uri", tokenUri);
               const theFetch = await fetch(tokenUri);
               //console.log("theFetch", theFetch);
               const theJson = await theFetch.json();
