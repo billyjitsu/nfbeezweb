@@ -125,7 +125,7 @@ const Minter = ({ mintTotal }) => {
         const chainId = network.chainId; 
         //hardcoded for xDai
         //if not on chain break / return the function
-        if (chainId !== 100) {
+        if (chainId !== 4) {
           alert('Please make sure you are on xDai Network');
           return;
         };
@@ -137,7 +137,7 @@ const Minter = ({ mintTotal }) => {
         };
 
         //console.log("Going to pop wallet now to pay gas...");
-        let payment = String(numToMint * 39); //VERIFY!
+        let payment = String(numToMint * .01); //VERIFY!
         let totalGas
         if(numToMint < 2) {
           totalGas = String(numToMint * 2400000);
@@ -206,7 +206,7 @@ const Minter = ({ mintTotal }) => {
         <Notification>
           <p>Your NFTs have been minted!</p>
           <a
-            href={`https://blockscout.com/xdai/mainnet/tx/${txn}`}
+            href={`https://rinkeby.etherscan.io/tx/${txn}`}
             rel={"noreferrer"}
             target="_blank"
           >
