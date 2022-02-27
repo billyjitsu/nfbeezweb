@@ -64,7 +64,7 @@ const WalletAddress = () => {
     const network = await provider.getNetwork();
     const chainId = network.chainId;
     // Hardcoded for xdai - Hex value issues
-    if (chainId !== 100) {
+    if (chainId !== 4) {
       setWrongNetwork(true);
     }
     if(newAccount !== undefined) {
