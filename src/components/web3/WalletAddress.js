@@ -25,7 +25,7 @@ const WalletAddress = () => {
 
   //on page load, check if user has metamask, and check if there is wallet address saved
   useEffect(() => {
-    connectWalletHandler();
+ //   connectWalletHandler();
     //connectToXDai();
     addWalletListener();
    // accountChangeHandler();
@@ -72,6 +72,8 @@ const WalletAddress = () => {
 			setWeb3Library(library);
 			setAccount(account);
       console.log("account:",accounts)
+      accountChangeHandler(accounts[0]);
+      console.log("account change handler pass:", accounts[0]);
 		} catch (ex) {
 			console.log(ex);
 		}
