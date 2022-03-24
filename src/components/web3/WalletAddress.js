@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import useStore from "../../store";
 import { Button } from "../Button";
 import { networkChainId } from "../../data/network";
+import { useWeb3React } from '@web3-react/core';  //this is for wrapper in return
+import { injected, walletconnect } from './Connectors';  // metamask
 
 
 const Address = styled.p`
@@ -19,11 +21,29 @@ const WalletAddress = () => {
   const [wrongNetwork, setWrongNetwork] = useState(false);
   const addAddress = useStore((state) => state.addWalletAddress);
 
+
+  //Hooks start
+  //connector, library, chainId, account, activate, deactivate
+  const {connector , library , chainId, activate} = useWeb3React();  // hook
+  //console.log ("BillyWeb3ReactContext", web3reactContext)
+
+  // connect meta
+  const connectMetamask = async () => {
+      try {
+         let test =  await activate(injected);
+          //console.log("Billy:", web3reactContext.connector)
+          console.log ("test", test)
+      } catch (ex) {
+          console.log(ex);
+      }
+  }
+
+
   //on page load, check if user has metamask, and check if there is wallet address saved
   useEffect(() => {
-    connectWalletHandler();
+ //   connectWalletHandler(); stop annoying pop up
     //connectToXDai();
-    addWalletListener();
+//  addWalletListener();  chaining listner too
    // accountChangeHandler();
     setAccount()
   }, []);
@@ -103,7 +123,10 @@ const WalletAddress = () => {
           </a>
         )}
       {!account && (
+        <>
         <Button onClick={connectWalletHandler}>Connect Wallet</Button>
+        <Button onClick={connectMetamask}>Connect Hook</Button>
+        </>
       )}
       {wrongNetwork && <Button onClick={connectToXDai}>Connect to gnosis</Button>}
       {!wrongNetwork && shortenedAddress && (

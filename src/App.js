@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
-//import { ethers } from "ethers";
 import Layout from "./components/Layout";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -8,10 +6,10 @@ import ArtistGallery from "./components/ArtistGallery";
 import Minter from "./components/web3/Minter";
 import useStore from "./store";
 import Faq from "./data/faq";
-//import NFT from "./utils/NFT.json";
-//import { contractAddress } from "./data/contract";
 import { HelperText } from "./components/HelperText";
 import Larva from "./assets/bees/banner.png";
+import { Web3Provider } from '@ethersproject/providers';  // for get Library function
+import { Web3ReactProvider } from '@web3-react/core';
 
 const Main = styled.main`
   padding: clamp(0.5rem, 2rem, 4rem);
@@ -78,10 +76,17 @@ const Banner = styled.img`
   }
 `;
 
+const getLibrary = (provider) => {
+  const library = new Web3Provider(provider, 'any');
+  library.pollingInterval = 15000;
+  return library;
+};
+
 const App = () => {
   let mintTotal = useStore((state) => state?.nftsToMint);
 
   return (
+    <Web3ReactProvider getLibrary={getLibrary}>
     <Layout>
       <Nav focusMinter />
       <Main>
@@ -114,6 +119,7 @@ const App = () => {
 
       <Footer />
     </Layout>
+    </Web3ReactProvider>
   );
 };
 
